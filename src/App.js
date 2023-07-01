@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "./App.css";
+import Search from "./search/Search";
 
 function App() {
 	const [user, setUser] = useState(null);
@@ -39,6 +40,10 @@ function App() {
 				<Route
 					path="/signup"
 					element={user ? <Navigate to="/" /> : <Signup />}
+				/>
+        <Route
+					path="/search"
+					element={user ? <Navigate to="/" /> : <Search />}
 				/>
 			</Routes>
 		</div>
