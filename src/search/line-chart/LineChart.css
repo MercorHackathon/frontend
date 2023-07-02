@@ -3,4 +3,27 @@
     background-color: white;
     border-radius: 10px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#score-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+#red-text, #blue-text {
+    font-weight: bold;
+    padding: 0px 4px;
+}
+
+#red-text {
+    color: red;
+}
+
+#blue-text {
+    color: blue;
 }

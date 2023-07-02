@@ -89,6 +89,7 @@ export default function LineChart({username}) {
         data != null && (
             <div className="graph-container">
                 <Line data={data} options={options}/>
+                <p id="score-display">Your current happiness index is <p id="red-text">{80}</p> whereas global happiness index is <p id="blue-text">{70}</p></p>
             </div>
         )
     )

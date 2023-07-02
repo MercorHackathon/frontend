@@ -48,7 +48,20 @@ const EmpHome = () => {
 
   return (
     <div className="perm-cont">
+      <h1>Manage Permissions</h1>
       <div className='cont'>
+        <div className="username-input">
+          <label htmlFor="twitter-username">Twitter Username:</label>
+          <input
+            type="text"
+            id="twitter-username"
+            value={twitterUsername}
+            onChange={handleUsernameChange}
+            className="text input-box"
+            // Disable the input if button1State is false
+          />
+        </div>
+
         <div className="permission">
           <label htmlFor="permission">Click to change permissions:</label>
           <div
@@ -60,17 +73,7 @@ const EmpHome = () => {
               : 'Permission not allowed for Google Fit access'}
           </div>
         </div>
-        <div className="username-input">
-          <label htmlFor="twitter-username">Enter your Twitter:</label>
-          <input
-            type="text"
-            id="twitter-username"
-            value={twitterUsername}
-            onChange={handleUsernameChange}
-            className="text input-box"
-            // Disable the input if button1State is false
-          />
-        </div>
+        
         <div className="username-input">
           <label htmlFor="username">Enter your username:</label>
           <input

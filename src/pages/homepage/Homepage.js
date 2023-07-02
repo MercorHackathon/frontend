@@ -21,7 +21,7 @@ const HomePage = () => {
       if (data.status === 'success') {
         // document.cookie= `token=${data.token}`
         localStorage.setItem('token', data.token);
-        navigate('/search')
+        navigate('/empHome')
       }
       else {
         setHasLoginFailed(true);

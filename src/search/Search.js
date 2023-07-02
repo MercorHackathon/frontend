@@ -7,7 +7,11 @@ export default function Search () {
     return (
         <>
             <SearchBar id="search-bar" setSelectedUsername={setSelectedUsername} />
-            {(selected_username != null) && <LineChart username={selected_username} />}
+            {(selected_username != null) && 
+            <>
+                <LineChart username={selected_username} />
+            </>
+            }
             
         </>
     )
