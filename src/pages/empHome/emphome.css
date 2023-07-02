@@ -75,3 +75,7 @@
 .twitter-username{
     text-shadow: 2px 2px 8px #fff871;
 }
+
+.perm-cont input {
+  width: 100%;
+}

@@ -11,7 +11,7 @@ export default function SearchBar({setSelectedUsername}) {
         if (input !== ''){
             try{
                 const uri = `${process.env.REACT_APP_API_URL}/api/search?username=${input}`;
-                const data = (await (axios.get(uri))).data;
+                const data = (await (axios.get(uri, { headers: {"Authorization" : `Bearer ${localStorage.getItem("token")}`}}))).data;
                 if (data.length <= 0)
                     setSearchResults(['Username not found'])
                 

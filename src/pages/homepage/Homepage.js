@@ -1,31 +1,43 @@
 import React, { useState } from 'react';
 import './homepage.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 const HomePage = () => {
-  const [loginType, setLoginType] = useState('employee');
   const [empId, setEmpId] = useState('');
   const [empPassword, setEmpPassword] = useState('');
-  const [mngId, setMngId] = useState('');
-  const [mngPassword, setMngPassword] = useState('');
+  const [ hasLoginFailed, setHasLoginFailed ] = useState(false);
+  const navigate = useNavigate()
 
-  const handleLoginTypeChange = () => {
-    setLoginType(loginType === 'employee' ? 'manager' : 'employee');
-  };
-
-  const handleLogin = () => {
-    if (loginType === 'employee') {
-      // Handle employee login logic here
-      console.log('Employee Login:', empId, empPassword);
-    } else {
-      // Handle manager login logic here
-      console.log('Manager Login:', mngId, mngPassword);
+  const handleLogin = async () => {
+    setHasLoginFailed(false);
+    const url = `${process.env.REACT_APP_API_URL}/api/login`
+    const creds = {
+      username: empId,
+      password: empPassword,
     }
+    try {
+      const data = (await axios.post(url, creds)).data;
+      if (data.status === 'success') {
+        // document.cookie= `token=${data.token}`
+        localStorage.setItem('token', data.token);
+        navigate('/search')
+      }
+      else {
+        setHasLoginFailed(true);
+      }
+    }
+    catch(err) {
+      console.log("Failed to login");
+    }
+
   };
 
   return (
     <div className="homepage-container">
     
         <div className="login-section">
+          {hasLoginFailed && <p id="login-failed">Invalid username or password</p>}
           <h2>Employee Login</h2>
           <input
             type="text"
