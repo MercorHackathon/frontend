@@ -32,8 +32,7 @@ const EmpHome = () => {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json',
-        "Authorization" : `Bearer ${localStorage.getItem("token")}`,
+        'Content-Type': 'application/json'
       }
     })
       .then(response => response.json())
@@ -62,13 +61,13 @@ const EmpHome = () => {
           </div>
         </div>
         <div className="username-input">
-          <label htmlFor="twitter-username">Enter your Twitter username:</label>
+          <label htmlFor="twitter-username">Enter your Twitter:</label>
           <input
             type="text"
             id="twitter-username"
             value={twitterUsername}
             onChange={handleUsernameChange}
-            className="text"
+            className="text input-box"
             // Disable the input if button1State is false
           />
         </div>
@@ -79,7 +78,7 @@ const EmpHome = () => {
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="text"
+            className="text input-box"
             disabled={!button1State} // Disable the input if button1State is false
           />
         </div>
@@ -90,7 +89,7 @@ const EmpHome = () => {
             id="apiKey"
             value={apiKey}
             onChange={handleApikeyChange}
-            className="text"
+            className="text input-box"
             disabled={!button1State} // Disable the input if button1State is false
           />
         </div>

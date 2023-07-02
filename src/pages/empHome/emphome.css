@@ -35,7 +35,8 @@
     background-color: #fff;
     width:30%;
     height: 70%;
-    box-shadow: 5px 10px 100px rgb(82, 82, 82)
+    box-shadow: 5px 10px 100px rgb(82, 82, 82);
+    border-radius: 2vh;
   }
 
   .username-input{
@@ -79,3 +80,44 @@
 .perm-cont input {
   width: 100%;
 }
+
+.input-box {
+    /* Set the desired width for the textboxes */
+    width: 200px;
+    /* Add any other common styling as needed */
+    /* For example: */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Add any other specific styling for the textboxes as needed */
+  
+  .input-box:hover {
+    /* Set the desired width for the textboxes */
+    width: 250px;
+    /* Add any other common styling as needed */
+    /* For example: */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+
+  .submit{
+    width:100px;
+    height: 50px;
+    border:none;
+    background-color: #6d6c6c;
+    border-radius: 5px;
+  }
+
+  .submit:hover{
+    width:150px;
+    height: 55px;
+    border:none;
+    background-color: #6d6c6c;
+    border-radius: 5px;
+  }
