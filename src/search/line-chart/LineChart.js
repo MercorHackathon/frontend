@@ -30,22 +30,22 @@ export default function LineChart({username}) {
         const fetchData = async () => {
             const url = `${process.env.REACT_APP_API_URL}/api/mental-health-data?username=${username}`;
             try {
-                const user_data = (await axios.get(url)).data;
+                const ret_data = (await axios.get(url)).data;
                 const chart_data = {
-                    labels: user_data.map(item => item.date),
+                    labels: ret_data.user_data.map(item => item.date),
                     datasets: [
                         {
-                            label: 'Mental Health Score',
-                            data: user_data.map(item => item.m_health_score),
+                            label: `${username}'s Mental Health Score`,
+                            data: ret_data.user_data.map(item => item.m_health_score),
                             borderColor: 'rgb(255, 99, 132)',
                             backgroundColor: 'rgba(255, 99, 132, 0.5)',
                         },
-                        // {
-                        // label: 'Dataset 2',
-                        // data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-                        // borderColor: 'rgb(53, 162, 235)',
-                        // backgroundColor: 'rgba(53, 162, 235, 0.5)',
-                        // },
+                        {
+                        label: 'Global Mental Health Score',
+                        data: ret_data.global_data.map(item => item.m_health_score),
+                        borderColor: 'rgb(53, 162, 235)',
+                        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                        },
                     ],
                 };
                 setData(chart_data);
