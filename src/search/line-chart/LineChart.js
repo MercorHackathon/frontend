@@ -28,9 +28,10 @@ export default function LineChart({username}) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = `${process.env.REACT_APP_API_URL}/api/mental-health-data?username=${username}`;
+            const url = `${process.env.REACT_APP_API_URL}/api/getMentalHealthData?username=${username}`;
             try {
                 const ret_data = (await axios.get(url)).data;
+                // console.log(ret_data)
                 const chart_data = {
                     labels: ret_data.user_data.map(item => item.date),
                     datasets: [
