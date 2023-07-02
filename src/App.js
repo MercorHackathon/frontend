@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "./App.css";
 import Search from "./search/Search";
+import HomePage from "./homepage/Homepage";
 
 function App() {
 	const [user, setUser] = useState(null);
@@ -25,9 +26,9 @@ function App() {
 	}, []);
 
 	return (
-		<div className="container">
+		<div>
 			<Routes>
-				<Route
+				{/* <Route
 					exact
 					path="/"
 					element={user ? <Home user={user} /> : <Navigate to="/login" />}
@@ -35,8 +36,20 @@ function App() {
 				<Route
 					exact
 					path="/login"
-					element={user ? <Navigate to="/" /> : <Login />}
+					element={user ? <Navigate to="/" /> : <HomePage />}
+				/> */}
+
+<Route
+					exact
+					path="/"
+					element={<Home/>}
 				/>
+				<Route
+					exact
+					path="/login"
+					element= {<HomePage/>}
+				/>
+
 				<Route
 					path="/signup"
 					element={user ? <Navigate to="/" /> : <Signup />}
