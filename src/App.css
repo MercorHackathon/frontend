@@ -1,13 +1,7 @@
-.homepage-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.app-container {
+    width: 100vw;
     height: 100vh;
-    background-color: yellow;
-  }
-  
-  .login-section {
+    background-color: #f0f8ff;
     display: flex;
     flex-direction: column;
     align-items: center;

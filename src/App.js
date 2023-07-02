@@ -1,12 +1,11 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "./App.css";
 import Search from "./search/Search";
 import HomePage from "./homepage/Homepage";
+import Navbar from "./components/SideNav/Navbar";
 
 function App() {
 	const [user, setUser] = useState(null);
@@ -26,23 +25,13 @@ function App() {
 	}, []);
 
 	return (
-		<div>
+		<div className="app-container">
+			<Navbar />
 			<Routes>
-				{/* <Route
-					exact
-					path="/"
-					element={user ? <Home user={user} /> : <Navigate to="/login" />}
-				/>
 				<Route
 					exact
-					path="/login"
-					element={user ? <Navigate to="/" /> : <HomePage />}
-				/> */}
-
-<Route
-					exact
 					path="/"
-					element={<Home/>}
+					element={<HomePage/>}
 				/>
 				<Route
 					exact
@@ -54,7 +43,7 @@ function App() {
 					path="/signup"
 					element={user ? <Navigate to="/" /> : <Signup />}
 				/>
-        <Route
+        		<Route
 					path="/search"
 					element={user ? <Navigate to="/" /> : <Search />}
 				/>

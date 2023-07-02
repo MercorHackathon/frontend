@@ -1,0 +1,30 @@
+#search-bar-container {
+    width: 60%;
+    margin: 10px;
+}
+
+#search-bar {
+    width: 100%;
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#search-result-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result-item {
+    border: 1px solid gray;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.search-result-item:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
