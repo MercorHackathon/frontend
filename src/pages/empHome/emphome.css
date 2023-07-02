@@ -1,0 +1,77 @@
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background-color: #fe0000;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-shadow: 5px 10px 8px 2px #888888
+  }
+  
+  .button.active {
+    background-color: #66bb6a;
+    color: #fff;
+  }
+
+  .perm-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap:3vh;
+  }
+
+  .cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:3vh;
+    background-color: #fff;
+    width:30%;
+    height: 70%;
+    box-shadow: 5px 10px 100px rgb(82, 82, 82)
+  }
+
+  .username-input{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .permission{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 2px 2px 8px #7d7d7d;
+    
+  }
+
+  .text{
+    box-shadow: 5px 10px 8px 2px #888888;
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+  }
+
+  .text:active{
+    border: none;
+  }
+
+  .submit{
+    background-color: #fff;
+    width:19%;
+    margin-top: 3vh;
+    box-shadow: 5px 10px 8px 2px #888888;
+  }
+  .submit:active{
+    background-color: #66bb6a;
+  }
+.twitter-username{
+    text-shadow: 2px 2px 8px #fff871;
+}

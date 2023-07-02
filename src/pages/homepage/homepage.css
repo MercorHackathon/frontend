@@ -8,12 +8,18 @@
     height: 100%;
     background-color: yellow;
   }
+
   
   .login-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    height:40vh;
+    width:40vw;
+    border-radius: 2vh;
+    box-shadow: 5px 10px 8px #888888;
   }
   
   .login-section h2 {
@@ -29,5 +35,19 @@
   
   .login-section button {
     padding: 10px 20px;
+    box-shadow: 5px 10px 8px #888888;
+    background-color: white;
+    border-radius: 5px;
   }
+
+  .login-section button:hover{
+    padding: 10px 20px;
+    box-shadow: 5px 10px 8px #888888;
+    background-color: white;
+    border-radius: 5px;
+    width: 15%;
+
+  }
+
+  
   

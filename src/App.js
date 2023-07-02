@@ -5,6 +5,8 @@ import "./App.css";
 import Search from "./search/Search";
 import HomePage from "./pages/homepage/Homepage";
 import Navbar from "./components/SideNav/Navbar";
+import EmpHome from "./pages/empHome/empHome";
+import BarGraph from "./components/Gfit/bargraph";
 
 function App() {
 	const [user, setUser] = useState(null);
@@ -37,9 +39,21 @@ function App() {
 					path="/login"
 					element= {<HomePage/>}
 				/>
+
+				<Route
+					exact
+					path="/empHome"
+					element= {<EmpHome/>}
+				/>
+
         		<Route
 					path="/search"
 					element={user ? <Navigate to="/" /> : <Search />}
+				/>
+
+				<Route
+					path="/Phealth"
+					element={<BarGraph />}
 				/>
 			</Routes>
 		</div>
