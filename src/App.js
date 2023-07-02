@@ -1,10 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Signup from "./pages/Signup";
 import "./App.css";
 import Search from "./search/Search";
-import HomePage from "./homepage/Homepage";
+import HomePage from "./pages/homepage/Homepage";
 import Navbar from "./components/SideNav/Navbar";
 
 function App() {
@@ -37,11 +36,6 @@ function App() {
 					exact
 					path="/login"
 					element= {<HomePage/>}
-				/>
-
-				<Route
-					path="/signup"
-					element={user ? <Navigate to="/" /> : <Signup />}
 				/>
         		<Route
 					path="/search"

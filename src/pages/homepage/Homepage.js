@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.module.css';
+import './homepage.css';
 
 const HomePage = () => {
   const [loginType, setLoginType] = useState('employee');
