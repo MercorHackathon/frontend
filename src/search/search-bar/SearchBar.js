@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
-
+import "./SearchBar.css";
 
 export default function SearchBar({setSelectedUsername}) {
     const [ search_results, setSearchResults ] = useState(null)
@@ -15,8 +15,10 @@ export default function SearchBar({setSelectedUsername}) {
                 if (data.length <= 0)
                     setSearchResults(['Username not found'])
                 
-                else
-                    setSearchResults(data.map(obj => obj.username));
+                else {
+                    const filltered_data = data.filter((_, index) => index < 5);
+                    setSearchResults(filltered_data.map(obj => obj.username));
+                }
             }
             catch(err) {
                 console.error(err);
@@ -38,12 +40,12 @@ export default function SearchBar({setSelectedUsername}) {
     }
 
     return (
-        <div>
-            <input onChange={onSearchChange} ref={searchBarRef} type="text" placeholder="Search using a username" />
+        <div id="search-bar-container">
+            <input id="search-bar" onChange={onSearchChange} ref={searchBarRef} type="text" placeholder="Search using a username" />
             {search_results && 
-                <div id="search-results">
+                <div id="search-result-container">
                     {search_results.map(
-                        (username, index) => <div key={index} onClick={() => selectUsername(username)}>{username}</div>
+                        (username, index) => <div className="search-result-item" key={index} onClick={() => selectUsername(username)}>{username}</div>
                     )}
                 </div>
             }

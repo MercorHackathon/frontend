@@ -41,7 +41,7 @@ function App() {
 					path="/signup"
 					element={user ? <Navigate to="/" /> : <Signup />}
 				/>
-        <Route
+        		<Route
 					path="/search"
 					element={user ? <Navigate to="/" /> : <Search />}
 				/>
