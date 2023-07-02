@@ -25,7 +25,7 @@ function App() {
 	}, []);
 
 	return (
-		<div className="app-container">
+		<div>
 			<Navbar />
 			<Routes>
 				<Route
