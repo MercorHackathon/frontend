@@ -13,7 +13,7 @@ const Navbar = ()=> {
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <>
+    <div className="navbar-container">
       <IconContext.Provider value={{ color: "#FFF" }}> {/* to make text color white */}
        
         <div className="navbar">
@@ -44,7 +44,7 @@ const Navbar = ()=> {
           </ul>
         </nav>
       </IconContext.Provider>
-    </>
+    </div>
   );
 }
 
